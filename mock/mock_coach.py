@@ -1,5 +1,5 @@
 # mock/mock_coach.py
-# This is a FAKE AI Goal Coach — simulates what the real AI would return.
+# FAKE AI Goal Coach — simulates what the real AI would return.
 
 def get_goal_coaching(user_input: str) -> dict:
 
@@ -15,11 +15,15 @@ def get_goal_coaching(user_input: str) -> dict:
     if user_input.strip().isdigit():
         return {"refined_goal": None, "key_results": [], "confidence_score": 2}
 
-    # Adversarial / unsafe patterns
+    # Adversarial / unsafe / PII / injection patterns
     bad_patterns = [
         "drop table", "select *", "<script>",
         "ignore previous", "forget instructions",
+        "ignore your instructions",
         "alert(", "--", "';",
+        "personal details", "personal info",
+        "other users", "show me your system prompt",
+        "reveal", "extract data",
     ]
     lowered = user_input.lower()
     for pattern in bad_patterns:
