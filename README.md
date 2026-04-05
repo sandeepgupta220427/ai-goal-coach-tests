@@ -23,3 +23,15 @@ pip install -r requirements.txt
 
 ## Run Tests
 pytest tests/ -v
+
+## 🐳 Running with Docker (Optional)
+
+Build the Docker image:
+```bash
+docker build -t ai-goal-coach-tests .
+```
+
+Run the tests inside Docker:
+```bash
+docker run ai-goal-coach-tests
+```
