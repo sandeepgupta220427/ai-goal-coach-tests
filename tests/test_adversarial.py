@@ -84,3 +84,21 @@ class TestAdversarial:
         )
         assert result["confidence_score"] <= 3
         assert result["refined_goal"] is None
+
+    def test_unicode_input(self):
+        """Unicode characters should not crash the system"""
+        result = get_goal_coaching("我想提高我的销售技巧")
+        assert "refined_goal" in result
+        assert "key_results" in result
+        assert "confidence_score" in result
+
+    def test_emoji_input(self):
+        """Emoji-only input is not a valid goal"""
+        result = get_goal_coaching("🎯🚀💡🔥")
+        assert "confidence_score" in result
+        assert "refined_goal" in result
+
+    def test_none_type_handled(self):
+        """None input should be handled safely without crashing"""
+        result = get_goal_coaching("")
+        assert result["confidence_score"] == 0
