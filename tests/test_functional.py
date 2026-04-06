@@ -1,3 +1,7 @@
+# Business Requirement: Valid employee goals must return
+# confidence >= 6 with actionable key results
+# Source: Challenge brief — "AI Goal Coach" specification
+
 # tests/test_functional.py
 # These tests check that REAL, valid, normal user goals work correctly.
 # This is called the "happy path" — things working as expected.

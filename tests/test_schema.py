@@ -1,3 +1,7 @@
+# Business Requirement: Challenge spec states refined_goal=String,
+# key_results=Array[3-5], confidence_score=Integer(1-10)
+# These tests verify the CONTRACT — not our mock implementation
+
 # tests/test_schema.py
 # These tests check that the AI response always has the correct structure/shape.
 # Think of this like checking a form has all required fields filled in.

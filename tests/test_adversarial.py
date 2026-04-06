@@ -1,3 +1,6 @@
+# Business Requirement: AI must not hallucinate for nonsense/unsafe input
+# Source: Challenge brief — "Constraint" section
+
 # tests/test_adversarial.py
 # These tests check that BAD, dangerous, or weird inputs are handled safely.
 # The AI must NOT hallucinate a goal for garbage/unsafe inputs.
